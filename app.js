@@ -68,19 +68,19 @@
         {
             client: "D2C · Skincare",
             headline: "From ₹4L to ₹42L / mo in 90 days",
-            img: "assests/images/growth_revinue.png",
+            img: "growth_revinue.png",
             metrics: [{ k: "ROAS", v: "4.8x" }, { k: "CAC", v: "-61%" }, { k: "Revenue", v: "10.5x" }],
         },
         {
             client: "Ed-Tech · SaaS",
             headline: "15,400 qualified leads in Q2",
-            img: "assests/images/sitting.png",
+            img: "sitting.png",
             metrics: [{ k: "Leads", v: "15.4K" }, { k: "CPL", v: "₹132" }, { k: "Close rate", v: "+38%" }],
         },
         {
             client: "Fintech · App",
             headline: "2M installs at ₹31 blended CPI",
-            img: "assests/images/fintech_app.png",
+            img: "fintech_app.png",
             metrics: [{ k: "Installs", v: "2.01M" }, { k: "CPI", v: "₹31" }, { k: "D7 retention", v: "44%" }],
         },
     ];
