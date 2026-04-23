@@ -1,0 +1,6 @@
+
+Action: file_editor str_replace /app/backend/requirements.txt --old-str "emergentintegrations==0.1.0" --new-str "emergentintegrations==0.1.0
+resend==2.29.0"
+Observation: Edit was successful.
+
+Installing dependencies from requirements.txt

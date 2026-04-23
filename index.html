@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#07080a" />
+<meta name="description" content="SHOUTUP — Performance-first social media marketing agency engineering lead ecosystems for real estate and growing businesses." />
+<title>SHOUTUP | Performance Architecture</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  // Prevent React from mounting (index.html is the app).
+  window.__SHOUTUP__ = true;
+</script>
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loader">
+  <div class="loader-logo">SHOUT<span class="accent">UP</span></div>
+  <div class="loader-sub">Initializing Performance Architecture</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+  <div class="loader-credit">MADE BY <strong>SOUHARDYA</strong> &amp; <strong>AYUSHI</strong></div>
+</div>
+
+<!-- ============ BACKGROUND LAYERS ============ -->
+<div class="bg-grid"></div>
+<div class="bg-orb o1"></div>
+<div class="bg-orb o2"></div>
+<div class="bg-orb o3"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" data-testid="main-nav">
+  <a href="#top" class="nav-brand" data-testid="brand-home">
+    <span class="dot"></span> SHOUT<span style="color:var(--accent)">UP</span>
+  </a>
+  <div class="nav-links">
+    <a href="#system" data-testid="nav-system">System</a>
+    <a href="#engine" data-testid="nav-engine">Engine</a>
+    <a href="#plans" data-testid="nav-plans">Plans</a>
+    <a href="#contact" data-testid="nav-contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <button class="btn btn-ghost" id="open-login" data-testid="open-login-btn">Login</button>
+    <a href="#contact" class="btn btn-accent" data-testid="nav-cta-btn">Book Strategy Call →</a>
+  </div>
+</nav>
+
+<!-- ============ ROLLING NOTIFICATION TICKER ============ -->
+<div class="ticker" style="margin-top:0;padding-top:88px;" id="top">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-pill reveal">
+    <span class="dot-live"></span> SYSTEM ONLINE · INDIA-WIDE
+  </div>
+  <h1 class="reveal">
+    Architecting<br />
+    <span class="accent">Growth</span> Velocity.
+  </h1>
+  <p class="sub reveal">
+    SHOUTUP is a performance-first social media marketing agency engineering lead ecosystems
+    that convert raw traffic into revenue using proprietary ad frameworks — purpose-built for
+    real estate, D2C, and high-intent service businesses across India.
+  </p>
+  <div class="hero-cta reveal">
+    <a href="#contact" class="btn btn-accent btn-lg" data-testid="hero-cta-primary">Start Performance Audit →</a>
+    <a href="#system" class="btn btn-outline btn-lg" data-testid="hero-cta-secondary">Explore The System</a>
+  </div>
+  <div class="hero-meta reveal">
+    <div><span style="color:var(--accent)">50+</span> &nbsp; Elite Partners Trust Us</div>
+    <div>ISO-Verified Lead Pipeline</div>
+    <div>7 Day SLA Onboarding</div>
+  </div>
+
+  <div class="hero-stats reveal">
+    <div class="hero-stat">
+      <div class="num accent" data-counter="1402">0</div>
+      <div class="lbl">Leads / Month · Live</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num"><span data-counter="5.8" data-decimals="1">0</span>x</div>
+      <div class="lbl">Avg. ROAS Delivered</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">₹<span data-counter="4200">0</span></div>
+      <div class="lbl">Budget Guard · Saved Today</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEM / MODULES ============ -->
+<section class="section" id="system">
+  <div class="section-head reveal">
+    <div class="eyebrow">Advanced System Architecture</div>
+    <h2>Ten proprietary modules engineered for high-volume growth.</h2>
+    <p>Every SHOUTUP campaign is wired on top of our modular performance stack — built from years of scaling real estate &amp; D2C brands across India.</p>
+  </div>
+  <div class="modules" id="modules"></div>
+</section>
+
+<!-- ============ ROI CALCULATOR ============ -->
+<section class="section" id="engine">
+  <div class="section-head reveal">
+    <div class="eyebrow">Growth Projection Engine</div>
+    <h2>Model your lead volume before you spend a rupee.</h2>
+    <p>Live ROI simulation based on SHOUTUP historical averages across Real Estate (₹22 CPL), D2C (₹45 CPL), and Services (₹60 CPL).</p>
+  </div>
+
+  <div class="roi-wrap reveal">
+    <div class="roi-left">
+      <div class="roi-field">
+        <label>Daily Spend (₹) <span class="value" id="roi-spend-val">2,000</span></label>
+        <input type="range" id="roi-spend" min="500" max="20000" step="100" value="2000" data-testid="roi-spend" />
+      </div>
+      <div class="roi-field">
+        <label>Duration (Days) <span class="value" id="roi-days-val">30</span></label>
+        <input type="range" id="roi-days" min="7" max="120" step="1" value="30" data-testid="roi-days" />
+      </div>
+      <div class="roi-field">
+        <label>Niche <span class="value" id="roi-niche-val">Real Estate</span></label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn btn-outline" data-niche="real-estate" data-cpl="22" data-testid="niche-real-estate">Real Estate · ₹22</button>
+          <button class="btn btn-outline" data-niche="d2c" data-cpl="45" data-testid="niche-d2c">D2C · ₹45</button>
+          <button class="btn btn-outline" data-niche="services" data-cpl="60" data-testid="niche-services">Services · ₹60</button>
+        </div>
+      </div>
+    </div>
+    <div class="roi-right">
+      <div class="roi-output">
+        <div class="lbl">Expected Lead Volume</div>
+        <div class="big" id="roi-leads">3,000</div>
+        <div class="sub">Qualified inbound leads over the campaign window.</div>
+      </div>
+      <div class="roi-divider"></div>
+      <div class="roi-row"><span>Ad Spend</span><span id="roi-adspend">₹60,000</span></div>
+      <div class="roi-row"><span>Agency Fee (incl. platform)</span><span id="roi-fee">₹0</span></div>
+      <div class="roi-row"><span>GST (18%)</span><span id="roi-gst">₹10,800</span></div>
+      <div class="roi-total"><span>Total Investment</span><span id="roi-total">₹70,800</span></div>
+      <a href="#contact" class="btn btn-accent" style="margin-top:28px;width:100%;justify-content:center;" data-testid="roi-cta">Lock this projection →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="plans">
+  <div class="section-head reveal">
+    <div class="eyebrow">Performance Packages</div>
+    <h2>Transparent pricing. No retainer games.</h2>
+    <p>Pick the scale that matches your ambition. Upgrade or pause any month.</p>
+  </div>
+  <div class="pricing">
+    <div class="plan reveal">
+      <h3>Lead Kickstart</h3>
+      <div class="ids">Up to 10 Managed IDs</div>
+      <div class="price">₹10,000<span>/mo</span></div>
+      <div class="max">Max Scale: ₹2,000 / Day / ID</div>
+      <ul>
+        <li><span class="tick">▸</span> Meta Lead Setup &amp; Launch</li>
+        <li><span class="tick">▸</span> 1 creative set per week</li>
+        <li><span class="tick">▸</span> Dedicated Performance Lead</li>
+        <li><span class="tick">▸</span> Weekly ROI Report</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline" data-testid="plan-kickstart">Get Started</a>
+    </div>
+    <div class="plan featured reveal">
+      <div class="badge">Most Popular</div>
+      <h3>Growth Partner</h3>
+      <div class="ids">Up to 20 Managed IDs</div>
+      <div class="price">₹25,000<span>/mo</span></div>
+      <div class="max">Max Scale: ₹5,000 / Day / ID</div>
+      <ul>
+        <li><span class="tick">▸</span> Omnichannel Ad Scaling (Meta + Google)</li>
+        <li><span class="tick">▸</span> 3 creative sets per week</li>
+        <li><span class="tick">▸</span> AI Copy Engine access</li>
+        <li><span class="tick">▸</span> CRM integration &amp; lead routing</li>
+        <li><span class="tick">▸</span> Priority SLA response</li>
+      </ul>
+      <a href="#contact" class="btn btn-accent" data-testid="plan-growth">Scale With Us</a>
+    </div>
+    <div class="plan reveal">
+      <h3>Enterprise Architect</h3>
+      <div class="ids">Unlimited Managed IDs</div>
+      <div class="price">Custom</div>
+      <div class="max">Dedicated War-Room · 24/7 SLA</div>
+      <ul>
+        <li><span class="tick">▸</span> Full performance team (5+ specialists)</li>
+        <li><span class="tick">▸</span> UGC production studio</li>
+        <li><span class="tick">▸</span> Custom attribution dashboards</li>
+        <li><span class="tick">▸</span> Hyper geofencing · pan-India rollouts</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline" data-testid="plan-enterprise">Request Proposal</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="section-head reveal">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Tell us about your growth target.</h2>
+    <p>Drop us a line — we reply within 2 business hours during India working days.</p>
+  </div>
+
+  <div class="contact-wrap">
+    <form class="contact-form reveal" id="contact-form" data-testid="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" required data-testid="contact-name" />
+        </div>
+        <div class="form-group">
+          <label>Business</label>
+          <input type="text" name="business" placeholder="e.g. Real Estate, D2C" data-testid="contact-business" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" required data-testid="contact-email" />
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" name="phone" data-testid="contact-phone" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>What do you want to scale?</label>
+        <textarea name="message" required placeholder="Tell us about your goals, monthly spend, and market..." data-testid="contact-message"></textarea>
+      </div>
+      <div class="form-msg" id="contact-msg" data-testid="contact-msg"></div>
+      <button type="submit" class="btn btn-accent btn-lg" style="width:100%;justify-content:center;margin-top:10px;" data-testid="contact-submit">Send Message →</button>
+    </form>
+
+    <div class="contact-info reveal">
+      <h3>Connect directly with the team.</h3>
+      <div class="info-row">
+        <div class="lbl">Email Support</div>
+        <div class="val"><a href="mailto:shoutupmarketing@gmail.com" data-testid="support-email">shoutupmarketing@gmail.com</a></div>
+      </div>
+      <div class="info-row">
+        <div class="lbl">Direct Call</div>
+        <div class="val"><a href="tel:+916291064863" data-testid="support-phone">+91 62910 64863</a></div>
+      </div>
+      <div class="info-row">
+        <div class="lbl">Response SLA</div>
+        <div class="val">&lt; 2 business hours</div>
+      </div>
+      <div class="info-row">
+        <div class="lbl">Coverage</div>
+        <div class="val">Pan-India · Remote-first</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <h3>SHOUT<span>UP</span></h3>
+      <p>SHOUTUP is a performance architecture agency dedicated to high-volume lead acquisition and ROI scaling through proprietary data systems.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#system">Social Ad Strategy</a></li>
+        <li><a href="#system">Lead Gen Audits</a></li>
+        <li><a href="#system">CRM Integration</a></li>
+        <li><a href="#system">UGC Production</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Agency</h4>
+      <ul>
+        <li><a href="#engine">System Design</a></li>
+        <li><a href="#engine">ROI Engine</a></li>
+        <li><a href="#plans">Pricing Plans</a></li>
+        <li><a href="#contact">Case Studies</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Follow The Growth</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">X / Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 SHOUTUP · All Systems Nominal</div>
+    <div class="credit">Made by <strong>SOUHARDYA</strong> &amp; <strong>AYUSHI</strong></div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a class="wa-float" id="wa-float" data-testid="whatsapp-float"
+   href="https://wa.me/916291064863?text=I%20LOVE%20YOU"
+   target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.39 0 .02 5.37.02 12c0 2.11.56 4.17 1.62 5.98L0 24l6.23-1.64A11.95 11.95 0 0 0 12.02 24C18.65 24 24 18.63 24 12c0-3.2-1.24-6.22-3.48-8.52zM12.02 21.82c-1.85 0-3.67-.5-5.26-1.44l-.38-.22-3.69.97.99-3.6-.25-.37A9.8 9.8 0 0 1 2.2 12c0-5.42 4.41-9.82 9.82-9.82 2.62 0 5.08 1.02 6.94 2.88a9.76 9.76 0 0 1 2.88 6.94c0 5.42-4.41 9.82-9.82 9.82zm5.39-7.35c-.29-.14-1.72-.85-1.99-.95-.27-.1-.47-.15-.66.15-.19.29-.76.95-.93 1.14-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.66-1.58-.9-2.17-.24-.58-.48-.5-.66-.51l-.56-.01c-.19 0-.5.07-.76.36-.27.29-1.01.99-1.01 2.41 0 1.42 1.04 2.8 1.19 2.99.14.19 2.05 3.13 4.97 4.38.7.3 1.24.48 1.66.62.7.22 1.33.19 1.83.11.56-.08 1.72-.7 1.97-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/>
+  </svg>
+</a>
+
+<!-- ============ LOGIN / SIGNUP MODAL ============ -->
+<div class="modal-backdrop" id="auth-modal" data-testid="auth-modal">
+  <div class="modal">
+    <button class="close" id="auth-close" data-testid="auth-close">✕</button>
+    <h2 id="auth-title">Welcome back</h2>
+    <div class="sub" id="auth-sub">Sign in to access your SHOUTUP dashboard.</div>
+
+    <div class="tab-row">
+      <button class="tab active" data-tab="login" data-testid="auth-tab-login">Sign In</button>
+      <button class="tab" data-tab="register" data-testid="auth-tab-register">Create Account</button>
+    </div>
+
+    <form id="login-form" data-testid="login-form">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required data-testid="login-email" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" required data-testid="login-password" />
+      </div>
+      <div class="form-msg" id="login-msg" data-testid="login-msg"></div>
+      <button type="submit" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:14px;" data-testid="login-submit">Sign In →</button>
+    </form>
+
+    <form id="register-form" style="display:none;" data-testid="register-form">
+      <div class="form-group"><label>Name</label><input type="text" name="name" required data-testid="reg-name" /></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required data-testid="reg-email" /></div>
+      <div class="form-group"><label>Company</label><input type="text" name="company" data-testid="reg-company" /></div>
+      <div class="form-group"><label>Password</label><input type="password" name="password" required minlength="6" data-testid="reg-password" /></div>
+      <div class="form-msg" id="register-msg" data-testid="register-msg"></div>
+      <button type="submit" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:14px;" data-testid="register-submit">Create Account →</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ TOAST STACK ============ -->
+<div class="toast-stack" id="toasts"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
